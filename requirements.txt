@@ -1,8 +1,8 @@
 import requests
 from datetime import datetime
 
-TOKEN = 'ضع التوكن هنا بين علامات التنصيص'
-CHANNEL = '@fahad7733spx'  # غيرها لاسم قناتك
+TOKEN = '7564742419:AAGdpatwKoEu9TwpmCujPp1ob0Qs0Nogc2I'
+CHANNEL = '@fahad7733spx'  #
 
 def send_message(text):
     url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
