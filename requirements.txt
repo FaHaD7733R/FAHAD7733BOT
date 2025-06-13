@@ -1,0 +1,25 @@
+import requests
+from datetime import datetime
+
+TOKEN = 'ضع التوكن هنا بين علامات التنصيص'
+CHANNEL = '@fahad7733spx'  # غيرها لاسم قناتك
+
+def send_message(text):
+    url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
+    payload = {'chat_id': CHANNEL, 'text': text}
+    response = requests.post(url, data=payload)
+    print(f'Status: {response.status_code}, Response: {response.json()}')
+
+def main():
+    now = datetime.now()
+    hour = now.hour
+
+    if 8 <= hour < 12:
+        send_message("🌅 صباح الخير! هذا التحليل الصباحي 📈")
+    elif 16 <= hour < 18:
+        send_message("🌇 مساء الخير! هذا التحليل المسائي 📉")
+    else:
+        print("⏳ الوقت غير مخصص للإرسال الآن.")
+
+if __name__ == "__main__":
+    main()
